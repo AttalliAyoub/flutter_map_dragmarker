@@ -9,11 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^0.1.2
-  flutter_map:
-    git:
-      url: https://github.com/AttalliAyoub/flutter_map.git
-  latlong: any
+  cupertino_icons: any
+  flutter_map: ^0.13.1
+  latlong2: any
 
 dev_dependencies:
   flutter_test:
