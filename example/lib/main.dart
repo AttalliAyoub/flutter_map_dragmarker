@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:flutter_map/plugin_api.dart';
-import 'dragmarker.dart';
+import 'package:flutter_map_dragmarker/dragmarker.dart';
 
 void main() {
   runApp(TestApp());
@@ -28,6 +28,7 @@ class _TestAppState extends State<TestApp> {
           child: Container(
             child: FlutterMap(
               options: MapOptions(
+                allowPanningOnScrollingParent: false,
                 plugins: [
                   DragMarkerPlugin(),
                 ],
@@ -57,6 +58,7 @@ class _TestAppState extends State<TestApp> {
                       updateMapNearEdge: true,
                       nearEdgeRatio: 2.0,
                       nearEdgeSpeed: 1.0,
+                      rotateMarker: true
                     ),
                     DragMarker(
                       point: LatLng(45.535, -122.675),
@@ -65,6 +67,7 @@ class _TestAppState extends State<TestApp> {
                       builder: (ctx) => Container( child: Icon(Icons.location_on, size: 50) ),
                       onDragEnd: (details,point) { print('Finished Drag $details $point'); },
                       updateMapNearEdge: false,
+                      rotateMarker: true
                     )
                   ],
                 ),
